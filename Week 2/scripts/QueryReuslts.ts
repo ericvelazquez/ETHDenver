@@ -18,7 +18,7 @@ async function main() {
   const winner = await ballotContract.winnerName()
   const votes = await ballotContract.winningProposal();
   console.log("The winning proposal is: ", ethers.utils.parseBytes32String(winner))
-  console.log("The winning proposal has the following # of votes: ", votes);
+  console.log("The winning proposal has the following # of votes: ",(await ballotContract.proposals(0)).voteCount);
 }
   
 
