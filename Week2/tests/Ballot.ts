@@ -14,7 +14,7 @@ function convertStringArrayToBytes32(array: string[]) {
     return bytes32Array;
   }
 
-  describe.only("Ballot", () => {
+  describe("Ballot", () => {
     let ballotContract: Ballot;
     let accounts: SignerWithAddress[];
     beforeEach(async () => {
