@@ -1,0 +1,49 @@
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">dApp FrontEnd</h1>
+  <div class="col-lg-6 mx-auto">
+    <div *ngIf="!wallet">
+      <p class="lead mb-4">Choose your connection method.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button 
+          type="button" 
+          class="btn btn-primary btn-lg px-4 gap-3" 
+          (click)="createWallet()"
+        >
+        Cast Votes
+        </button>
+
+        <button 
+        type="button" 
+        class="btn btn-info btn-lg px-4 gap-3" 
+        >
+        Self Delegate
+        </button>
+
+        <button 
+        type="button" 
+        class="btn btn-success btn-lg px-4 gap-3" 
+        >
+        Query Results
+        </button>
+      </div>
+    </div>
+    <div *ngIf="wallet">
+      <p class="lead mb-4">This is your address: {{ wallet.address }}.</p>
+      <p class="lead mb-4">The token address is: {{ tokenContractAddress }}.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <div class="card p-2 m-2">
+          <p> Ether balance:</p>
+          <p>{{ etherBalance }} </p>
+        </div>
+        <div class="card p-2 m-2">
+          <p> Tokens balance:</p>
+          <p>{{ tokenBalance }} </p>
+        </div>
+        <div class="card p-2 m-2">
+          <p> Voting power:</p>
+          <p>{{ votePower }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
